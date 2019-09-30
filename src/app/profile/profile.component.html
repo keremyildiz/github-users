@@ -1,0 +1,60 @@
+<div class="full-content" *ngIf="profile">
+    <div class="container-full cover-img" style="background-image:url('https://cdn.dribbble.com/users/1803663/screenshots/7269947/media/496d8ac3b4f5cf52b2487ea59ad78711.jpg')">
+      <div class="container-wrapper">
+        <div class="git-icon">
+          <div class="user-info">
+              <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="">
+              <span> {{profile.login}} </span>
+          </div>
+          <div class="user-search">
+            <input type="text" placeholder="Github kullanıcı adı giriniz..." [(ngModel)]="username" name="username" (keyup.Enter)="findProfile()">
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="container-full user-details">
+      <div class="container-wrapper">
+        <div class="user-icon">
+            <img src="{{profile.avatar_url}}" alt="">
+        </div>
+    
+        <div class="user-details-links">
+          
+          <a href="{{profile.html_url}}" target="_blank">
+            Profili Görüntüle
+          </a>
+    
+        </div>
+    
+        <div class="user-details-items">
+          <ul>
+            <li>
+              <strong> Kullanıcı Adı: </strong>
+              <span> {{profile.login}} </span>
+            </li>
+            <li>
+              <strong> Lokasyon: </strong>
+              <span> {{profile.location}} </span>
+            </li>
+            <li>
+              <strong> Email: </strong>
+              <span> {{profile.email}} </span>
+            </li>
+            <li>
+              <strong> Blog Link: </strong>
+              <a href="{{profile.blog}}"> {{profile.blog}} </a>
+            </li>
+            <li>
+              <strong> Company: </strong>
+              <span> {{profile.company}} </span>
+            </li>
+            <li>
+                <strong> Member Since: </strong>
+                <span> {{profile.created_at}} </span>
+              </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+</div>
